@@ -1,7 +1,7 @@
 /**
  * Very simple primal simplex tableau resolution.
  *
- * @param tableauParam: initial tableau defined in the documentation.
+ * @param tableauParam: initial tableau as defined in the documentation.
  * @param rowsParam: number of rows of the tableau.
  * @param columnsParam: number of columns of the tableau.
  * @param initialBaseParam: base columns indexes.
@@ -143,8 +143,6 @@ function PrimalSimplex(tableauParam, rowsParam, columnsParam, initialBaseParam) 
     }
 
     function composeSolution(tableau, basicSolution) {
-
-        console.log(basicSolution);
 
         var x = new Array(columns-1);
 
