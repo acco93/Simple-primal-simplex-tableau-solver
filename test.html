@@ -1,0 +1,51 @@
+<html>
+
+<head>
+
+    <script src="PrimalSimplex.js"></script>
+
+</head>
+
+<body>
+
+
+</body>
+
+<script>
+
+
+    var simpleTableau = new Array(4);
+    for (var i = 0; i < 4; i++) {
+        simpleTableau[i] = new Array(7);
+    }
+
+    simpleTableau[0] = [-1, -1, 4, 0, 0, 0, 0];
+    simpleTableau[1] = [1, 1, 2, 1, 0, 0, 9];
+    simpleTableau[2] = [1, 1, -1, 0, 1, 0, 2];
+    simpleTableau[3] = [-1, 1, 1, 0, 0, 1, 4];
+
+    var initialBase = [3, 4, 5];
+
+    var simplex = new PrimalSimplex(simpleTableau, 4, 7, initialBase);
+
+    console.log(simplex.solve());
+
+
+    // M. Beale cycling example
+    var cyclingTableau = new Array(4);
+    for (var i = 0; i < 4; i++) {
+        cyclingTableau[i] = new Array(8);
+    }
+
+    cyclingTableau[0] = [0, 0, 0, 3 / 4, -20, 1 / 2, -6, 0];
+    cyclingTableau[1] = [1, 0, 0, 1 / 4, -8, -1, 9, 0];
+    cyclingTableau[2] = [0, 1, 0, 1 / 2, -12, -1 / 2, 3, 0];
+    cyclingTableau[3] = [0, 0, 1, 0, 0, 1, 0, 1];
+
+    simplex = new PrimalSimplex(cyclingTableau, 4, 8, [0, 1, 2]);
+
+    console.log(simplex.solve());
+
+</script>
+
+</html>
